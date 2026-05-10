@@ -45,6 +45,13 @@ function formatGeminiError(err: unknown) {
         ? err
         : 'Terjadi kesalahan saat menganalisis.';
 
+  const isLeakedKeyError =
+    /PERMISSION_DENIED|API key was reported as leaked|reported as leaked|api key.*leaked/i.test(message);
+
+  if (isLeakedKeyError) {
+    return 'API key Gemini ini sudah diblokir karena terdeteksi bocor. Buat key baru di Google AI Studio, lalu tempelkan ke file `.env.local`.';
+  }
+
   const isQuotaError =
     /RESOURCE_EXHAUSTED|quota|429|rate limit/i.test(message);
 
