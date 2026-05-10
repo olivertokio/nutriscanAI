@@ -1,0 +1,6 @@
+{
+  "name": "NutriScanAI",
+  "description": "AmanMakan AI analyzes food ingredients against your health profile, allergies, and dietary restrictions (Halal/Haram).",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
